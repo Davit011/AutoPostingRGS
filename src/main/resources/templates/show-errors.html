@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Errors</title>
+</head>
+<body>
+    <div th:each="profile:${profiles}">
+        <h4 th:if = "${status.get(profile).equals('ok')}" th:text="${profile.username} + ' ' + ${profile.password} + ' ' + ${status.get(profile)}" style="color:green"></h4>
+        <h4 th:if = "${!status.get(profile).equals('ok')}" th:text="${profile.username} + ' ' + ${profile.password} + ' ' + ${status.get(profile)}" style="color:red"></h4>
+    </div>
+</body>
+</html>

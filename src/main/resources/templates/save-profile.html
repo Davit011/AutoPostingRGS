@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Save Profile</title>
+</head>
+<body>
+    <a href="/">Add Post</a>
+    <h4 th:if="${error} != null" th:text="${error}" style="color:red"></h4>
+    <div>
+        <form action="/save" method="post">
+            <input type="text" name="username">
+            <input type="text" name="password">
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
